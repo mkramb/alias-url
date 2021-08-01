@@ -1,0 +1,17 @@
+#
+# This file tells your IDE the formatting (etc) rules for your project.
+# See http://editorconfig.org/
+#
+
+root = true
+
+[*]
+charset = utf-8
+end_of_line = lf
+indent_style = space
+insert_final_newline = true
+trim_trailing_whitespace = true
+indent_size = 2
+
+[*.md]
+trim_trailing_whitespace = false
