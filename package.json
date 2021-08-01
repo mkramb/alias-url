@@ -2,16 +2,16 @@
   "name": "parent",
   "version": "1.0.0",
   "private": true,
-  "description": "Alias URL service",
+  "description": "Alias URL service Test",
   "author": "Mitja Kramberger <mitja.kramberger@gmail.com>",
   "workspaces": [
     "packages/**"
   ],
   "scripts": {
-    "build": "cross-env NODE_ENV=production lerna run build --stream",
     "clean": "lerna clean --yes && shx rm -fr node_modules && docker-compose rm -f",
     "prettier": "lerna run prettier --stream",
-    "start": "concurrently --kill-others \"docker-compose up database\" \"lerna run start --stream\""
+    "test": "lerna run test --stream --ignore @alias/test-integrations",
+    "start": "concurrently --kill-others \"docker-compose up database\" \"lerna run start --parallel --stream\""
   },
   "devDependencies": {
     "concurrently": "^6.2.0",

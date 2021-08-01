@@ -1,9 +1,8 @@
 import express from 'express';
 import { StatusCodes } from 'http-status-codes';
 
-import { AliasItems } from '../../models';
+import { AliasItems, decode } from '../../models';
 import { AliasTable } from '../../database';
-import { decode } from '../../utils';
 
 // only support max retrieval of
 // 1000 items at one time

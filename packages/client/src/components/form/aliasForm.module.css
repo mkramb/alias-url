@@ -1,0 +1,43 @@
+.form {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  max-width: 100%;
+
+  padding: 1rem;
+  margin-bottom: 1.5rem;
+  border-top: 1px solid gray;
+  border-bottom: 1px solid gray;
+  background-color: lightblue;
+}
+
+.form button {
+  border: 0;
+  background-color: black;
+  color: white;
+  padding: 0.6em;
+}
+
+.input {
+  flex-grow: 1;
+}
+
+.input input {
+  padding: 0.3em;
+  width: 90%;
+}
+
+.invalid input {
+  border: 2px solid red;
+}
+
+@media only screen and (max-width: 450px) {
+  .form button,
+  .form label {
+    display: none;
+  }
+
+  .input input {
+    width: 100%;
+  }
+}

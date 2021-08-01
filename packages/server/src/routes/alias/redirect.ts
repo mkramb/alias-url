@@ -2,8 +2,7 @@ import express from 'express';
 import { StatusCodes } from 'http-status-codes';
 
 import { AliasTable } from '../../database';
-import { AliasItem } from '../../models';
-import { decode } from '../../utils';
+import { AliasItem, decode } from '../../models';
 
 export async function redirect(req: express.Request, res: express.Response) {
   try {

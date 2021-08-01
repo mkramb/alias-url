@@ -2,9 +2,8 @@ import express from 'express';
 import { customAlphabet } from 'nanoid/async';
 import { StatusCodes } from 'http-status-codes';
 
-import { AliasRequest, AliasItem } from '../../models';
+import { AliasRequest, AliasItem, decode } from '../../models';
 import { AliasTable } from '../../database';
-import { decode } from '../../utils';
 
 // TODO: when we know specific of how many links will be generated,
 // we could look into generating them offline, using a key generation service

@@ -1,0 +1,24 @@
+.aliasListItem {
+  flex: 1;
+  display: flex;
+  flex-direction: row;
+  max-width: 100%;
+
+  padding: 0.8em;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+  background-color: lightgray;
+  border-radius: 1em;
+}
+
+.aliasListItem a {
+  color: black;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.aliasListItem p {
+  margin: 0;
+  padding: 0;
+  padding-left: 0.2em;
+}

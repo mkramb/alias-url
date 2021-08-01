@@ -1,20 +1,41 @@
 version: '3.8'
 
 services:
-  app:
+  client:
+    build:
+      context: .
+      dockerfile: ./packages/client/Dockerfile
+      args:
+        - VITE_SERVER_URL=http://localhost:8080
+        - VITE_SERVER_REDIRECT_URL=https://pbid.io
+    ports:
+      - '8000:8000'
+    depends_on:
+      - server
+    networks:
+      - app-network
+
+  server:
     build:
       context: .
       dockerfile: ./packages/server/Dockerfile
-      network: host
     ports:
       - '8080:8080'
     links:
       - database
     environment:
-      DB_URI: 'mongodb://database:27017/alias'
+      - DB_URI='mongodb://database:27017/alias'
+    networks:
+      - app-network
 
   database:
     image: mongo:5.0.1
     command: mongod --quiet
     ports:
       - '27017:27017'
+    networks:
+      - app-network
+
+networks:
+  app-network:
+    driver: bridge

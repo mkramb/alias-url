@@ -13,5 +13,5 @@ export const createConnection = async () => {
 };
 
 export const getConnection = () => {
-  return mongoose.connections[0];
+  return mongoose.connections && mongoose.connections[0];
 };

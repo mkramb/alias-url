@@ -1,2 +1,2 @@
 export * from './alias';
-export * from './common';
+export * from './utils';

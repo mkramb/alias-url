@@ -9,7 +9,8 @@ export const jsonBody = (
   express.json()(req, res, (error) => {
     if (error) {
       res.status(StatusCodes.UNPROCESSABLE_ENTITY);
-      res.send().end();
+      res.send();
+      res.end();
     } else {
       next();
     }

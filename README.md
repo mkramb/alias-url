@@ -1,9 +1,12 @@
 # URL Alias
 
-This is monorepo which contains multiple `packages`:
+This is monorepo which contains application `packages`:
 
 - [@alias/client](./packages/client/README.md)
 - [@alias/server](./packages/server/README.md)
+
+And supporting tests:
+- [@alias/tests-integration](./packages/tests-integration/README.md)
 
 ## Prerequisite
 
@@ -21,10 +24,11 @@ yarn install
 
 ## Local Development
 
-To start locally (uses docker for mongodb):
+To start locally, which uses docker (only) for mongodb:
 
 ```
 yarn start
+yarn test
 ```
 
 ## Production build
@@ -34,5 +38,27 @@ docker-compose build
 docker-compose up
 
 # when setup is done (check terminal)
-# web ui is available on localhost:8080
+# web ui is available on localhost:8000
 ```
+
+## Integrations tests
+
+- Bring up an instance
+- Execute integration tests:
+
+```
+cd packages/tests-integration
+yarn test
+```
+
+## Useful Docs
+
+- [Why Monorepo?](./docs/monorepo.md)
+- [Type Safety](./docs/types.md)
+
+
+## TODO
+
+- More test & increase coverage (also maybe adding performance test)
+- Better UX and E2E tests for happy path
+- Offline key generation (if needed)

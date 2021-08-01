@@ -5,7 +5,7 @@ ENV NPM_CONFIG_LOGLEVEL=error
 WORKDIR /alias
 COPY . /alias
 
-RUN yarn install && yarn build
+RUN yarn install && cd packages/server && yarn build
 RUN yarn install --production --ignore-scripts --prefer-offline
 
 USER node
